@@ -1,5 +1,5 @@
 .navbar {
-    background-color: var(--color-primary);
+    background-color:#34C94B;
     height: 74px;
     width: 100vw;
     padding: 0px 32px;
@@ -8,7 +8,7 @@
     justify-content: space-between;
   }
   .appBar {
-    background-color: var(--color-primary);
+    background-color:#34C94B;
   }
   
   .toolbar {
@@ -34,13 +34,15 @@
   }
   
   .feedbackButton {
-    background-color: var(--color-secondary);
-    color: white;
+    background-color: #34C94B;
+    color: var(--color-secondary); 
     border-radius: 4px;
     padding: 8px 16px;
     margin-left: 16px;
-    text-transform: none; /* Optional: to keep text in regular case */
+    text-transform: none; 
+    font-family: 'Poppins', sans-serif;
   }
+  
   
   /* Responsive adjustments */
   @media (max-width: 600px) {
