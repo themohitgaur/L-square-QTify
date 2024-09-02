@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  background-color: black;
+  color: white;
 }
 /* Add this in index.css or a global stylesheet */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');

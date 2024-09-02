@@ -1,0 +1,21 @@
+.card {
+  max-width: 345px;
+  margin: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chip {
+  margin-top: 10px;
+  background-color: #f1f1f1;
+}
