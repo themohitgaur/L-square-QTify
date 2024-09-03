@@ -11,7 +11,7 @@ function Navbar({ searchData }) {
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <AppBar sx={{backgroundColor:'#34C94B'}} position="static" className={styles.appBar}>
+    <AppBar sx={{backgroundColor:'#34C94B', color:''}} position="static" className={styles.appBar}>
       <Toolbar className={styles.toolbar}>
         {isMobile && (
           <IconButton edge="start" aria-label="menu" className={styles.menuButton}>
@@ -25,7 +25,7 @@ function Navbar({ searchData }) {
           <Search placeholder="Search a song of your choice" searchData={searchData} />
         </div>
         {!isMobile && (
-          <Button variant="contained" sx={{backgroundColor:'black'}} className={styles.feedbackButton}>
+          <Button variant="contained" sx={{backgroundColor:'black', color:'#34C94B', fontFamily:'Poppins',}} className={styles.feedbackButton}>
             Give Feedback
           </Button>
         )}

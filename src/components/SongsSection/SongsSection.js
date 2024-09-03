@@ -8,7 +8,6 @@ const SongsSection = () => {
     const [songsData, setSongsData] = useState([]);
     const [genre, setGenre] = useState('All');
     const [genres, setGenres] = useState([]);
-    const classes = useStyles();
 
     useEffect(() => {
         axios.get('https://qtify-backend-labs.crio.do/songs')
@@ -16,7 +15,7 @@ const SongsSection = () => {
             .catch(error => console.error('Error fetching songs:', error));
 
         axios.get('https://qtify-backend-labs.crio.do/genres')
-            .then(response => setGenres(response.data))
+            .then(response => setGenres(response.data.data)) // Extracting data property
             .catch(error => console.error('Error fetching genres:', error));
     }, []);
 
@@ -28,12 +27,25 @@ const SongsSection = () => {
 
     return (
         <Container>
-            <Typography variant="h4">Songs</Typography>
-            <Tabs value={genre} onChange={handleTabChange} className={classes.tabs}>
-                {genres.map((g) => (
-                    <Tab key={g} value={g} label={g} />
+            <Typography variant="h6" gutterBottom>
+                Songs
+            </Typography>
+            <Tabs 
+                value={genre} 
+                onChange={handleTabChange} 
+                sx={{ marginBottom: 2 }}
+                variant="scrollable"
+                scrollButtons="auto"
+            >
+                <Tab sx={{ color: 'white' }} value="All" label="All" />
+                {genres.map((genreObj) => (
+                    <Tab 
+                        sx={{ color: 'white' }} 
+                        key={genreObj.key} 
+                        value={genreObj.key} 
+                        label={genreObj.label} 
+                    />
                 ))}
-                <Tab value="All" label="All" />
             </Tabs>
             <Grid container spacing={2}>
                 <Carousel data={filteredSongs} />
